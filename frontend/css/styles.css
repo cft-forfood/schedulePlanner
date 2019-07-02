@@ -10,3 +10,24 @@ body {
     overflow-x: hidden;
     font-family: Montserrat, sans-serif;
 }
+
+div {
+    display: block;
+}
+
+ul {
+
+}
+
+li {
+
+}
+
+.header__list {
+    display: inline-block;
+    font-weight: 400;
+}
+
+.header__list-account {
+    float: right;
+}
