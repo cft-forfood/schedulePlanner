@@ -6,21 +6,25 @@ body {
     height: 100vh;
     min-width: 320px;
     max-width: 1920px;
+    color: #434349;
+    background-color: #f2f3f8;
     overflow-y: scroll;
     overflow-x: hidden;
     font-family: Montserrat, sans-serif;
 }
 
-div {
-    display: block;
+.content {
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 5px;
 }
-
-ul {
-
+.content__title {
+    padding: 20px;
+    border-bottom: 1px solid #e2e5ec;
 }
-
-li {
-
+.content__body {
+    padding: 20px;
 }
 
 .header__list {
@@ -31,3 +35,4 @@ li {
 .header__list-account {
     float: right;
 }
+
