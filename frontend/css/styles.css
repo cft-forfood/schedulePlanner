@@ -98,3 +98,27 @@ th {
 .shift-selected {
 	background-color: rgb(38, 198, 218);
 }
+
+.left-column {
+	display: inline-block;
+	width: 480px;
+	margin-right: 20px;
+	text-align: right;
+	font-weight: 600;
+}
+.right-column {
+	display: inline-block;
+}
+
+.row {
+	margin-bottom: 15px;
+}
+
+.button {
+	padding: 10px;
+	width: 120px;
+	margin: 25px auto 0;
+	background: rgb(38, 198, 218);
+	color: white;
+	border-radius: 25px;
+}
