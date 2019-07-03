@@ -20,9 +20,9 @@ window.onload = function() {
         menu.onmouseenter = function () {
             dropdown.classList.add('menu-open');
         };
-         menu.onmouseleave = function () {
-             dropdown.classList.remove('menu-open');
-         }
+        menu.onmouseleave = function () {
+            dropdown.classList.remove('menu-open');
+        }
     }
 
     function loadEmployees() {
