@@ -126,16 +126,21 @@ th {
 
 button {
 	padding: 10px;
-	width: 150px;
-	margin: 25px auto 0;
-	background: rgb(41, 182, 246);
-	color: white;
 	border-radius: 25px;
 	border: none;
 }
 
 button:hover {
 	background: rgb(38, 198, 218);
+}
+
+.mt25 {
+	margin: 25px auto 0;
+}
+
+.btn-blue {
+	background: rgb(41, 182, 246);
+	color: white;
 }
 
 .menu-open {
