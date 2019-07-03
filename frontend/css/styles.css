@@ -38,15 +38,19 @@ body {
 	color: white !important;
 }
 .header ul {
-	display: inline-block;
 	margin: 0;
 	list-style: none;
 	padding: 10px 0;
 }
-.header li {
+.main-menu, .main-account {
+	display: inline-block;
+}
+.main-menu li {
 	display: inline;
+}
+.header li {
 	padding: 10px 15px;
-	margin: -3px;
+	margin-right: -3px;
 }
 .header li:hover {
 	background-color: rgb(207, 216, 220);
@@ -58,9 +62,26 @@ body {
 }
 .main-account {
 	float: right;
+	padding-top: 0 !important;
 }
 .drop {
-	display: block;
+	display: none;
+	background-color: rgb(41, 182, 246);
+	padding: 0 !important;
+}
+.drop li {
+	border-bottom: 1px solid rgb(236, 239, 241);
+}
+.info:hover {
+	background-color: rgb(41, 182, 246) !important;
+	cursor: default;
+}
+.category {
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+.telephone {
+	font-weight: 300;
 }
 table, td {
 	border: 1px solid #6c757d;
