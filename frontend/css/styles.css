@@ -55,7 +55,8 @@ body {
 .header li:hover {
 	background-color: rgb(207, 216, 220);
 }
-.header a {
+.header a,
+.header span {
 	color: rgb(38, 50, 56);
 	font-weight: 500;
 	text-decoration: none;
@@ -66,8 +67,13 @@ body {
 }
 .drop {
 	display: none;
+	width: 227px;
 	background-color: rgb(41, 182, 246);
 	padding: 0 !important;
+	z-index: 999;
+	position: absolute;
+	right: 0;
+	top: 39px;
 }
 .drop li {
 	border-bottom: 1px solid rgb(236, 239, 241);
@@ -97,4 +103,8 @@ th {
 }
 .shift-selected {
 	background-color: rgb(38, 198, 218);
+}
+
+.menu-open {
+	display: block;
 }
