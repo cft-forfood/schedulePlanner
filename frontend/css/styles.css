@@ -13,11 +13,24 @@ body {
     font-family: Montserrat, sans-serif;
 }
 
+.content {
+  margin: 20px auto;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.content-title {
+  padding: 20px;
+  border-bottom: 1px solid #e2e5ec;
+}
+.content-body {
+  padding: 20px;
+}
+
 .header {
     background-color: #f5f5f5;
     border: 1px solid #e5e5e5;
 }
-
 .header ul {
     display: inline-block;
     margin: 0;
@@ -42,3 +55,22 @@ body {
   .main-account {
     float: right;
   }
+
+table, td {
+    border: 1px solid #6c757d;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    padding: 10px;
+    background-color: #e2e5ec;
+}
+
+.shift-selected {
+    background-color: #17a2b8;
+}
