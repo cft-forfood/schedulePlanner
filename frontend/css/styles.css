@@ -13,26 +13,32 @@ body {
     font-family: Montserrat, sans-serif;
 }
 
-.content {
-    margin: 20px auto;
-    max-width: 1200px;
-    background-color: #fff;
-    border-radius: 5px;
-}
-.content__title {
-    padding: 20px;
-    border-bottom: 1px solid #e2e5ec;
-}
-.content__body {
-    padding: 20px;
+.header {
+    background-color: #f5f5f5;
+    border: 1px solid #e5e5e5;
 }
 
-.header__list {
+.header ul {
     display: inline-block;
-    font-weight: 400;
-}
+    margin: 0;
+    list-style: none;
+    padding: 10px 0;
+  }
+  
+  .header li {
+    display: inline;
+    padding: 10px 15px;
+  }
 
-.header__list-account {
+  .header li:hover {
+    background-color: aqua;
+  }
+
+  .header a {
+    color: #0088cc;
+    text-decoration: none;
+  }
+
+  .main-account {
     float: right;
-}
-
+  }
