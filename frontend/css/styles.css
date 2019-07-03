@@ -1,90 +1,79 @@
 * {
-    margin: 0;
-    padding: 0
+	margin: 0;
+	padding: 0
 }
 body {
-    height: 100vh;
-    min-width: 320px;
-    max-width: 1920px;
-    color: rgb(38, 50, 56);
-    background-color: rgb(236, 239, 241);
-    overflow-y: scroll;
-    overflow-x: hidden;
-    font-family: Montserrat, sans-serif;
+	height: 100vh;
+	min-width: 320px;
+	max-width: 1920px;
+	color: rgb(38, 50, 56);
+	background-color: rgb(236, 239, 241);
+	overflow-y: scroll;
+	overflow-x: hidden;
+	font-family: Montserrat, sans-serif;
 }
-
 .content {
-  margin: 20px auto;
-  max-width: 1200px;
-  background-color: #fff;
-  border-radius: 5px;
+	margin: 20px auto;
+	max-width: 1200px;
+	background-color: #fff;
+	border-radius: 5px;
 }
 .content-title {
-  padding: 20px;
-  border-bottom: 1px solid rgb(236, 239, 241);
+	padding: 20px;
+	border-bottom: 1px solid rgb(236, 239, 241);
 }
 .content-body {
-  padding: 20px;
+	padding: 20px;
 }
-
 .header {
-    background-color: rgb(176, 190, 197);
+	background-color: rgb(176, 190, 197);
 }
-
 .logo {
-  background-color: rgb(41, 182, 246);
+	background-color: rgb(41, 182, 246);
 }
-
 .logo:hover {
-  background-color: rgb(38, 198, 218) !important;
+	background-color: rgb(38, 198, 218) !important;
 }
-
 .logo a {
-  color: white !important;
+	color: white !important;
 }
-
 .header ul {
-    display: inline-block;
-    margin: 0;
-    list-style: none;
-    padding: 10px 0;
-  }
-  
-  .header li {
-    display: inline;
-    padding: 10px 15px;
-    margin: -3px;
-  }
-
-  .header li:hover {
-    background-color: rgb(207, 216, 220);
-  }
-
-  .header a {
-    color: rgb(38, 50, 56);
-    font-weight: 500;
-    text-decoration: none;
-  }
-
-  .main-account {
-    float: right;
-  }
-
+	display: inline-block;
+	margin: 0;
+	list-style: none;
+	padding: 10px 0;
+}
+.header li {
+	display: inline;
+	padding: 10px 15px;
+	margin: -3px;
+}
+.header li:hover {
+	background-color: rgb(207, 216, 220);
+}
+.header a {
+	color: rgb(38, 50, 56);
+	font-weight: 500;
+	text-decoration: none;
+}
+.main-account {
+	float: right;
+}
+.drop {
+	display: block;
+}
 table, td {
-    border: 1px solid #6c757d;
-    border-collapse: collapse;
-    padding: 10px;
+	border: 1px solid #6c757d;
+	border-collapse: collapse;
+	padding: 10px;
 }
-
 table {
-    width: 100%;
+	width: 100%;
 }
-
 th {
-    padding: 10px;
-    background-color: rgba(237, 242, 245, 0.9);
+	padding: 10px;
+	background-color: rgba(237, 242, 245, 0.9);
 }
-
 .shift-selected {
-    background-color: rgb(38, 198, 218);
+	background-color: rgb(38, 198, 218);
 }
