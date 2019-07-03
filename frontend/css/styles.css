@@ -130,10 +130,6 @@ button {
 	border: none;
 }
 
-button:hover {
-	background: rgb(38, 198, 218);
-}
-
 .mt25 {
 	margin: 25px auto 0;
 }
@@ -141,6 +137,10 @@ button:hover {
 .btn-blue {
 	background: rgb(41, 182, 246);
 	color: white;
+}
+
+.btn-blue:hover {
+	background: rgb(38, 198, 218);
 }
 
 .menu-open {
