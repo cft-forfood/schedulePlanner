@@ -105,6 +105,54 @@ th {
 	background-color: rgb(38, 198, 218);
 }
 
+.left-column {
+	display: inline-block;
+	width: 465px;
+	margin-right: 20px;
+	text-align: right;
+	font-weight: 600;
+}
+.right-column {
+	display: inline-block;
+}
+
+.row {
+	margin-bottom: 15px;
+}
+
+.center {
+	text-align: center;
+}
+
+label {
+	font-size: 12pt;
+}
+
+input {
+	border: 1px solid rgb(207, 216, 220);
+	padding: 4px 7px;
+}
+
+button {
+	padding: 10px 20px;
+	border-radius: 25px;
+	border: none;
+	font-size: 12pt;
+}
+
+.mt25 {
+	margin: 25px auto 0;
+}
+
+.btn-blue {
+	background: rgb(41, 182, 246);
+	color: white;
+}
+
+.btn-blue:hover {
+	background: rgb(38, 198, 218);
+}
+
 .menu-open {
 	display: block;
 }
