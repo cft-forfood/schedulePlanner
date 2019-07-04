@@ -1,5 +1,6 @@
 window.onload = function() {
     setShift();
+    setVacation();
     openMenu();
 };
 
@@ -33,7 +34,6 @@ function openMenu() {
 }
 
 function showEmployees(employees) {
-
     let employeeTable = document.getElementById('employeeList');
     employeeTable.innerHTML = '';
 
@@ -90,6 +90,19 @@ function setShift() {
                 this.classList.remove('shift-selected');
             } else {
                 this.classList.add('shift-selected');
+            }
+        }
+    }
+}
+
+function setVacation() {
+    let shiftCell = document.getElementsByClassName('shift-cancel');
+    for (let i = 0; i < shiftCell.length; i++) {
+        shiftCell[i].onclick = function () {
+            if (this.classList.contains('shift-vacation')) {
+                this.classList.remove('shift-vacation');
+            } else {
+                this.classList.add('shift-vacation');
             }
         }
     }
