@@ -45,7 +45,8 @@ body {
 .main-menu, .main-account {
 	display: inline-block;
 }
-.main-menu li {
+.main-menu li,
+.main-account li {
 	display: inline;
 }
 .header li {
@@ -55,22 +56,33 @@ body {
 .header li:hover {
 	background-color: rgb(207, 216, 220);
 }
-.header a {
+.header a,
+#menu {
 	color: rgb(38, 50, 56);
 	font-weight: 500;
 	text-decoration: none;
 }
 .main-account {
 	float: right;
-	padding-top: 0 !important;
 }
 .drop {
 	display: none;
+	width: 230px;
 	background-color: rgb(41, 182, 246);
 	padding: 0 !important;
+	z-index: 999;
+	position: absolute;
+	right: 0;
+	top: 39px;
 }
 .drop li {
+	display: block;
 	border-bottom: 1px solid rgb(236, 239, 241);
+}
+#menu > li {
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 .info:hover {
 	background-color: rgb(41, 182, 246) !important;
@@ -97,4 +109,48 @@ th {
 }
 .shift-selected {
 	background-color: rgb(38, 198, 218);
+}
+.left-column {
+	display: inline-block;
+	width: 400px;
+	margin-right: 20px;
+	text-align: right;
+	font-weight: 600;
+}
+.right-column {
+	display: inline-block;
+	width: 720px;
+}
+.row {
+	margin-bottom: 15px;
+}
+.center {
+	text-align: center;
+}
+label {
+	font-size: 12pt;
+}
+input {
+	border: 1px solid rgb(207, 216, 220);
+	padding: 4px 7px;
+	width: 100%;
+}
+button {
+	padding: 10px 20px;
+	border-radius: 25px;
+	border: none;
+	font-size: 12pt;
+}
+.mt25 {
+	margin: 25px auto 0;
+}
+.btn-blue {
+	background: rgb(41, 182, 246);
+	color: white;
+}
+.btn-blue:hover {
+	background: rgb(38, 198, 218);
+}
+.menu-open {
+	display: block;
 }
