@@ -13,6 +13,19 @@ window.onload = function() {
         }
     }
 
+    function setVacation() {
+        let shiftCell = document.getElementsByClassName('shift-cancel');
+        for (let i = 0; i < shiftCell.length; i++) {
+            shiftCell[i].onclick = function () {
+                if (this.classList.contains('shift-vacation')) {
+                    this.classList.remove('shift-vacation');
+                } else {
+                    this.classList.add('shift-vacation');
+                }
+            }
+        }
+    }
+
     function openMenu() {
         let menu = document.getElementById('menu');
         let dropdown = document.getElementById('drop');
@@ -97,4 +110,5 @@ window.onload = function() {
 
     setShift();
     openMenu();
+    setVacation();
 };
