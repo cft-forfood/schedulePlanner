@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="utf-8">
+    <title>Планирование графика работы</title>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <ul class="main-menu">
+            <li class="logo"><a href="/"><img src="../media/cat.svg" alt="Главная страница"></a></li>
+            <li><a href="/">Текущая неделя</a></li>
+            <li><a href="/">Следующая неделя</a></li>
+        </ul>
+        <ul class="main-account" id="menu">
+            <li>Петров Петр Петрович
+                <ul class="drop" id="drop">
+                    <li class="info">
+                        <p class="category">Повар</p>
+                        <p class="telephone">+7 800 555 25 25</p>
+                    </li>
+                    <li><a href="">Выход</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="content-title">
+            <h3>Следующая неделя</h3>
+        </div>
+        <div id="employeeList"></div>
+        <div class="content-body">
+            <table>
+                <tr>
+                    <th>Пн</th>
+                    <th>Вт</th>
+                    <th>Ср</th>
+                    <th>Чт</th>
+                    <th>Пт</th>
+                    <th>Сб</th>
+                    <th>Вс</th>
+                </tr>
+                <tr>
+                    <td class="shift-cancel"></td>
+                    <td class="shift-cancel"></td>
+                    <td class="shift-cancel"></td>
+                    <td class="shift-cancel"></td>
+                    <td class="shift-cancel"></td>
+                    <td class="shift-cancel"></td>
+                    <td class="shift-cancel"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="../js/index.js" type="text/javascript"></script>
+</body>
+</html>
