@@ -165,28 +165,67 @@ button {
 .menu-open {
 	display: block;
 }
-
 .column-half {
 	width: 567px;
 	display: inline-block;
 }
-
 .categories {
 	margin: 15px;
 	font-weight: 600;
 	text-align: center;
 	margin: 30px 0;
 }
-
 .categories:first-child {
 	margin-top: 0;
 }
-
 .workers-list {
 	text-align: right;
 	margin-right: 20px;
 }
-
 h1 {
+	font-size: 25pt;
 	text-align: center;
+	padding-bottom: 12px;
+}
+h2, h3 {
+	text-align: center !important;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #cccccc;
+}
+.background-page {
+	background: #ffffff url("../media/background.png") no-repeat 50% 0;
+	background-attachment: fixed;
+	background-size: 89%;
+}
+.top-page {
+	width: 480px;
+	margin: 0 auto;
+}
+.features {
+	margin-bottom: 30px;
+}
+.features p {
+	display: inline-block;
+	vertical-align: top;
+	width: 30%;
+	margin: 0 5px;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.func-list {
+	padding: 0;
+	list-style: none;
+}
+.feature-effect {
+	padding-top: 65px;
+	background-image: url("../media/calendar.svg");
+}
+.feature-automation {
+	padding-top: 65px;
+	background-image: url("../media/automation.svg");
+}
+.feature-org {
+	padding-top: 65px;
+	background-image: url("../media/job.svg");
 }
