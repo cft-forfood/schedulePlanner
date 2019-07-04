@@ -45,7 +45,8 @@ body {
 .main-menu, .main-account {
 	display: inline-block;
 }
-.main-menu li {
+.main-menu li,
+.main-account li {
 	display: inline;
 }
 .header li {
@@ -56,18 +57,17 @@ body {
 	background-color: rgb(207, 216, 220);
 }
 .header a,
-.header span {
+#menu {
 	color: rgb(38, 50, 56);
 	font-weight: 500;
 	text-decoration: none;
 }
 .main-account {
 	float: right;
-	padding-top: 0 !important;
 }
 .drop {
 	display: none;
-	width: 227px;
+	width: 230px;
 	background-color: rgb(41, 182, 246);
 	padding: 0 !important;
 	z-index: 999;
@@ -76,7 +76,13 @@ body {
 	top: 39px;
 }
 .drop li {
+	display: block;
 	border-bottom: 1px solid rgb(236, 239, 241);
+}
+#menu > li {
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 .info:hover {
 	background-color: rgb(41, 182, 246) !important;
@@ -107,13 +113,14 @@ th {
 
 .left-column {
 	display: inline-block;
-	width: 465px;
+	width: 400px;
 	margin-right: 20px;
 	text-align: right;
 	font-weight: 600;
 }
 .right-column {
 	display: inline-block;
+	width: 720px;
 }
 
 .row {
@@ -131,6 +138,7 @@ label {
 input {
 	border: 1px solid rgb(207, 216, 220);
 	padding: 4px 7px;
+	width: 100%;
 }
 
 button {
