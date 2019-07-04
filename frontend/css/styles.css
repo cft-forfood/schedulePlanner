@@ -34,13 +34,14 @@ body {
 .logo:hover {
 	background-color: rgb(38, 198, 218) !important;
 }
-.logo a {
-	color: white !important;
+.logo img {
+	position: relative;
+	top: 7px;
 }
 .header ul {
 	margin: 0;
 	list-style: none;
-	padding: 10px 0;
+	line-height: 39px;
 }
 .main-menu, .main-account {
 	display: inline-block;
@@ -78,11 +79,13 @@ body {
 .drop li {
 	display: block;
 	border-bottom: 1px solid rgb(236, 239, 241);
+	padding: 0 15px !important;
 }
 #menu > li {
 	position: absolute;
 	right: 0;
 	top: 0;
+	padding: 0 15px !important;
 }
 .info:hover {
 	background-color: rgb(41, 182, 246) !important;
@@ -109,6 +112,13 @@ th {
 }
 .shift-selected {
 	background-color: rgb(38, 198, 218);
+}
+.shift-vacation {
+	background-color: red;
+}
+.shift-cancel {
+	height: 40px;
+	padding: 0;
 }
 .left-column {
 	display: inline-block;
