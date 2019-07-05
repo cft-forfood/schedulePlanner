@@ -193,18 +193,8 @@ button {
 	text-align: right;
 	margin-right: 20px;
 }
-.mainpage-h1 {
-	font-size: 25pt;
-	text-align: center;
-	padding-bottom: 12px;
-}
-.mainpage-h2 {
-	text-align: center;
-	padding-bottom: 12px;
-	border-bottom: 1px solid #cccccc;
-}
 .opacity {
-	background-color: rgba(255, 255, 255, 0.75);
+	background-color: rgba(255, 255, 255, 0.7);
 	height: 100vh;
 	min-width: 320px;
 	max-width: 1920px;
@@ -222,17 +212,33 @@ button {
 	background-size: 100%;
 	margin: 20px auto;
 	border-radius: 5px;
-	
 }
 .top-page {
 	width: 480px;
 	margin: 0 auto;
+	padding: 40px;
+	font-weight: 500;
+}
+.mainpage-h1 {
+	font-size: 25pt;
+	text-align: center;
+	padding-bottom: 25px;
+	padding-top: 20px;
+}
+.mainpage-h2 {
+	text-align: center;
+	padding-bottom: 12px;
+	padding-top: 20px;
+	border-bottom: 1px solid #cccccc;
+	font-weight: 700;
+	width: 40%;
+	margin: 10px auto;
 }
 .features {
 	margin-bottom: 30px;
 }
 .features p {
-	font-weight: 500;
+	font-weight: 600;
 	display: inline-block;
 	vertical-align: top;
 	width: 30%;
@@ -242,8 +248,8 @@ button {
 	background-position: center top;
 }
 .func-list {
+	text-align: center;
 	padding: 0;
-	list-style: none;
 }
 .feature-effect {
 	padding-top: 65px;
