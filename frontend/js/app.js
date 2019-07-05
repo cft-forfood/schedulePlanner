@@ -486,11 +486,11 @@ let controller = {
 
 window.onload = () => {
     controller.openMenu();
-    // controller.showEmployeeList();
+    controller.showEmployeeList();
     controller.showEmployeeMenu();
-    // controller.showShifts();
-    // controller.setShift();
-    // controller.setShiftId();
+    controller.showShifts();
+    controller.setShift();
+    controller.setShiftId();
     controller.showVacation();
     controller.setVacationId();
     controller.setVacation();
