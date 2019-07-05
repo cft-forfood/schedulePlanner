@@ -109,15 +109,19 @@ th {
 	padding: 10px;
 	background-color: rgba(237, 242, 245, 0.9);
 }
-.shift-selected {
+.isAssigned {
 	background-color: rgb(38, 198, 218);
 }
-.shift-vacation {
-	background-color: red;
-}
-.shift-cancel {
+.shift-cancel,
+.shift-assigned {
 	height: 40px;
 	padding: 0;
+}
+.isCancelled {
+	background-color: rgb(255, 112, 67);
+}
+.isCancelled.isAssigned {
+	background-color: rgb(255, 202, 40);
 }
 .left-column {
 	display: inline-block;
