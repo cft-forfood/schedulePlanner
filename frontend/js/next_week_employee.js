@@ -117,11 +117,6 @@ let model = {
             status: "isCancelled"
         }
     ],
-    filterEmployeeList: function (categoryText) {
-        return this.getWorkers.filter(function (cat) {
-            return cat.category === categoryText;
-        });
-    },
     getMonday: function (date) {
         date = new Date(date);
         date.setHours(0);
@@ -146,36 +141,6 @@ let model = {
 };
 
 let view = {
-    showEmployeeList: function (arr, id, category) {
-        let employeeList = document.getElementById('employeeList');
-
-        let rowDiv = document.createElement('div');
-        rowDiv.id = id;
-        employeeList.appendChild(rowDiv);
-
-        let categoryDiv = document.createElement('div');
-        categoryDiv.className = 'row categories';
-        categoryDiv.textContent = category;
-        rowDiv.appendChild(categoryDiv);
-
-        console.log(arr);
-
-        for (let employee of arr) {
-            let empRowDiv = document.createElement('div');
-            empRowDiv.className = 'row';
-            rowDiv.appendChild(empRowDiv);
-
-            let nameDiv = document.createElement('div');
-            nameDiv.className = 'column-half workers-list';
-            nameDiv.textContent = employee.workerName;
-            empRowDiv.appendChild(nameDiv);
-
-            let phoneDiv = document.createElement('div');
-            phoneDiv.className = 'column-half';
-            phoneDiv.textContent = employee.phoneNumber;
-            empRowDiv.appendChild(phoneDiv);
-        }
-    },
     showEmployeeMenu: function (arr) {
         let empName = document.getElementById('employeeNameMenu');
         let empInfo = document.getElementById('employeeMenuInfo');
@@ -191,138 +156,6 @@ let view = {
         empPhone.className = 'telephone';
         empPhone.textContent = arr[0].phoneNumber;
         empInfo.appendChild(empPhone);
-    },
-    showShifts: function (arr) {
-        let shiftDiv = document.getElementById('shiftDiv');
-
-        let empTable = document.createElement('table');
-        empTable.id = 'shiftList';
-        shiftDiv.appendChild(empTable);
-
-        let headerRow = document.createElement('tr');
-        empTable.appendChild(headerRow);
-
-        let headerCell = document.createElement('th');
-        headerCell.textContent = 'ФИО сотрудника';
-        headerRow.appendChild(headerCell);
-
-        let date = model.getMonday(new Date());
-
-        let dayCell = document.createElement('th');
-        dayCell.className = 'shift-date';
-        headerRow.appendChild(dayCell);
-
-        let dayFormatted = document.createElement('span');
-        dayFormatted.textContent = model.formatDate(date);
-        dayCell.appendChild(dayFormatted);
-
-        let dayUTC = document.createElement('span');
-        dayUTC.style.display = 'none';
-        dayUTC.textContent = date;
-        dayUTC.id = 'shift-1';
-        dayCell.appendChild(dayUTC);
-
-        for (let i = 0; i < 6; i++) {
-            date.setDate(date.getDate() + 1);
-
-            let dayCell = document.createElement('th');
-            dayCell.className = 'shift-date';
-            headerRow.appendChild(dayCell);
-
-            let dayFormatted = document.createElement('span');
-            dayFormatted.textContent = model.formatDate(date);
-            dayCell.appendChild(dayFormatted);
-
-            let dayUTC = document.createElement('span');
-            dayUTC.style.display = 'none';
-            dayUTC.textContent = date;
-            dayUTC.id = 'shift-' + (i + 2);
-            dayCell.appendChild(dayUTC);
-        }
-
-        arr.forEach((employee) => {
-            let empRow = document.createElement('tr');
-            empRow.id = employee.id;
-            empTable.appendChild(empRow);
-
-            let empCell = document.createElement('td');
-            empRow.appendChild(empCell);
-
-            let empCellName = document.createElement('p');
-            empCellName.textContent = employee.workerName;
-            empCellName.className = 'employee-name';
-            empCell.appendChild(empCellName);
-
-            let empCellCategory = document.createElement('p');
-            empCellCategory.textContent = employee.category;
-            empCellCategory.className = 'employee-category';
-            empCell.appendChild(empCellCategory);
-
-            for (let i = 0; i < 7; i++) {
-                let emptyCell = document.createElement('td');
-                emptyCell.className = 'shift';
-                empRow.appendChild(emptyCell);
-            }
-        });
-
-        let buttonDiv = document.createElement('div');
-        buttonDiv.classList = 'row center mt25';
-        shiftDiv.appendChild(buttonDiv);
-
-        let button = document.createElement('button');
-        button.className = 'btn-green';
-        button.textContent = 'Подтвердить';
-        buttonDiv.appendChild(button);
-    },
-    setShift: function (arr) {
-        let shiftCell = document.getElementsByClassName('shift');
-
-        for (let shift of shiftCell) {
-            shift.onclick = function () {
-                let cell = this.id;
-
-                if (this.classList.contains('isAssigned')) {
-                    this.classList.remove('isAssigned');
-
-                    for (let empShift of arr) {
-                        console.log(empShift);
-                        if (+empShift.id === +cell) {
-                            empShift.status = null;
-                            console.log(empShift);
-                        }
-                    }
-                } else {
-                    this.classList.add('isAssigned');
-
-                    for (let empShift of arr) {
-                        console.log(empShift);
-                        if (+empShift.id === +cell) {
-                            empShift.status = 'isAssigned';
-                            console.log(empShift);
-                        }
-                    }
-                }
-            }
-        }
-    },
-    setShiftId: function (arr) {
-        for (let j = 0; j < arr.length; j++) {
-            let empTr = document.getElementById(arr[j].workerId);
-            let empShifts = empTr.getElementsByClassName('shift');
-
-            for (let i = 0; i < empShifts.length; i++) {
-                let dayId = document.getElementById('shift-' + (i + 1));
-                let dayShiftWeek = Date.parse(dayId.textContent);
-
-                if (dayShiftWeek === arr[j].date) {
-                    empShifts[i].id = arr[j].id;
-
-                    if (arr[j].status === "isCancelled") {
-                        empShifts[i].classList.add('isCancelled');
-                    }
-                }
-            }
-        }
     },
     showVacation: function (emp) {
         let shiftDiv = document.getElementById('vacationDiv');
@@ -403,36 +236,36 @@ let view = {
         }
     },
     setVacation: function (arr) {
-    let shiftCell = document.getElementsByClassName('shift-cancel');
+        let shiftCell = document.getElementsByClassName('shift-cancel');
 
-    for (let shift of shiftCell) {
-        shift.onclick = function () {
-            let cell = this.id;
+        for (let shift of shiftCell) {
+            shift.onclick = function () {
+                let cell = this.id;
 
-            if (this.classList.contains('isCancelled')) {
-                this.classList.remove('isCancelled');
+                if (this.classList.contains('isCancelled')) {
+                    this.classList.remove('isCancelled');
 
-                for (let empShift of arr) {
-                    console.log(empShift);
-                    if (+empShift.id === +cell) {
-                        empShift.status = null;
+                    for (let empShift of arr) {
                         console.log(empShift);
+                        if (+empShift.id === +cell) {
+                            empShift.status = null;
+                            console.log(empShift);
+                        }
                     }
-                }
-            } else {
-                this.classList.add('isCancelled');
+                } else {
+                    this.classList.add('isCancelled');
 
-                for (let empShift of arr) {
-                    console.log(empShift);
-                    if (+empShift.id === +cell) {
-                        empShift.status = 'isCancelled';
+                    for (let empShift of arr) {
                         console.log(empShift);
+                        if (+empShift.id === +cell) {
+                            empShift.status = 'isCancelled';
+                            console.log(empShift);
+                        }
                     }
                 }
             }
         }
-    }
-},
+    },
 };
 
 let controller = {
@@ -447,29 +280,8 @@ let controller = {
             dropdown.classList.remove('menu-open');
         }
     },
-    showEmployeeList: () => {
-        let cooksArr = model.filterEmployeeList('Повар');
-        let waitersArr = model.filterEmployeeList('Официант');
-
-
-        console.log(cooksArr)
-
-        view.showEmployeeList(cooksArr, 'cooks', 'Повара');
-        view.showEmployeeList(waitersArr, 'waiters', 'Официанты');
-    },
     showEmployeeMenu: () => {
         view.showEmployeeMenu(model.getWorkers);
-    },
-    showShifts: () => {
-        view.showShifts(model.getWorkers);
-    },
-    setShift: () => {
-        view.setShift(model.getShifts);
-    },
-    setShiftId: () => {
-        for (let shiftDay of model.getShifts) {
-            view.setShiftId(model.getShifts);
-        }
     },
     showVacation: () => {
         view.showVacation(model.getWorkers[0]);
@@ -486,11 +298,7 @@ let controller = {
 
 window.onload = () => {
     controller.openMenu();
-    // controller.showEmployeeList();
     controller.showEmployeeMenu();
-    // controller.showShifts();
-    // controller.setShift();
-    // controller.setShiftId();
     controller.showVacation();
     controller.setVacationId();
     controller.setVacation();
