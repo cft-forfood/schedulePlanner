@@ -33,89 +33,47 @@ let model = {
     ],
     getShifts: [
         {
-            id: 111,
-            date: 1562518800000,
+            id: 11,
+            date: 1561914000000,
+            workerId: 1,
+            status: "isAssigned"
+        },
+        {
+            id: 13,
+            date: 1562000400000,
+            workerId: 1,
+            status: "isAssigned"
+        },
+        {
+            id: 15,
+            date: 1562086800000,
+            workerId: 1,
+            status: "isAssigned"
+        },
+        {
+            id: 17,
+            date: 1562173200000,
             workerId: 1,
             status: null
         },
         {
-            id: 112,
-            date: 1562518800000,
-            workerId: 2,
-            status: null
-        },
-        {
-            id: 113,
-            date: 1562605200000,
+            id: 19,
+            date: 1562259600000,
             workerId: 1,
-            status: "isCancelled"
+            status: "isAssigned"
         },
         {
-            id: 114,
-            date: 1562605200000,
-            workerId: 2,
-            status: null
-        },
-        {
-            id: 115,
-            date: 1562691600000,
+            id: 21,
+            date: 1562346000000,
             workerId: 1,
             status: null
         },
         {
-            id: 116,
-            date: 1562691600000,
-            workerId: 2,
-            status: null
-        },
-        {
-            id: 117,
-            date: 1562778000000,
+            id: 23,
+            date: 1562432400000,
             workerId: 1,
             status: null
         },
-        {
-            id: 118,
-            date: 1562778000000,
-            workerId: 2,
-            status: null
-        },
-        {
-            id: 119,
-            date: 1562864400000,
-            workerId: 1,
-            status: "isCancelled"
-        },
-        {
-            id: 120,
-            date: 1562864400000,
-            workerId: 2,
-            status: null
-        },
-        {
-            id: 121,
-            date: 1562950800000,
-            workerId: 1,
-            status: null
-        },
-        {
-            id: 122,
-            date: 1562950800000,
-            workerId: 2,
-            status: "isCancelled"
-        },
-        {
-            id: 123,
-            date: 1563037200000,
-            workerId: 1,
-            status: null
-        },
-        {
-            id: 124,
-            date: 1563037200000,
-            workerId: 2,
-            status: "isCancelled"
-        }
     ],
     getMonday: function (date) {
         date = new Date(date);
@@ -126,7 +84,7 @@ let model = {
         let day = date.getDay();
         let diff = date.getDate() - day + (day === 0 ? -6:1);
 
-        return new Date(date.setDate(diff + 7));
+        return new Date(date.setDate(diff));
     },
     formatDate: function (date) {
         let day = date.getDate();
@@ -158,7 +116,7 @@ let view = {
         empInfo.appendChild(empPhone);
     },
     showVacation: function (emp) {
-        let shiftDiv = document.getElementById('vacationDiv');
+        let shiftDiv = document.getElementById('shiftDivCurrent');
 
         let empTable = document.createElement('table');
         empTable.id = 'vacationList';
@@ -207,23 +165,14 @@ let view = {
 
         for (let i = 0; i < 7; i++) {
             let emptyCell = document.createElement('td');
-            emptyCell.className = 'shift-cancel';
+            emptyCell.className = 'shift-assigned';
             empRow.appendChild(emptyCell);
         }
-
-        let buttonDiv = document.createElement('div');
-        buttonDiv.classList = 'row center mt25';
-        shiftDiv.appendChild(buttonDiv);
-
-        let button = document.createElement('button');
-        button.className = 'btn-green';
-        button.textContent = 'Подтвердить';
-        buttonDiv.appendChild(button);
     },
     setVacationId: function (arr, emp) {
         for (let j = 0; j < arr.length; j++) {
             let empTr = document.getElementById(emp);
-            let empShifts = empTr.getElementsByClassName('shift-cancel');
+            let empShifts = empTr.getElementsByClassName('shift-assigned');
 
             for (let i = 0; i < empShifts.length; i++) {
                 let dayId = document.getElementById('shift-' + (i + 1));
@@ -231,37 +180,49 @@ let view = {
 
                 if (dayShiftWeek === arr[j].date) {
                     empShifts[i].id = arr[j].id;
+
+                    console.log(arr[j].status)
+
+                    if (arr[j].status === "isAssigned") {
+                        empShifts[i].classList.add('isAssigned');
+                    }
                 }
             }
         }
     },
+
+    // setShiftId: function (arr) {
+    //     for (let j = 0; j < arr.length; j++) {
+    //         let empTr = document.getElementById(arr[j].workerId);
+    //         let empShifts = empTr.getElementsByClassName('shift');
+    //
+    //         for (let i = 0; i < empShifts.length; i++) {
+    //             let dayId = document.getElementById('shift-' + (i + 1));
+    //             let dayShiftWeek = Date.parse(dayId.textContent);
+    //
+    //             if (dayShiftWeek === arr[j].date) {
+    //                 empShifts[i].id = arr[j].id;
+    //
+    //                 if (arr[j].status === "isCancelled") {
+    //                     empShifts[i].classList.add('isCancelled');
+    //                 }
+    //
+    //                 if (arr[j].status === "isAssigned") {
+    //                     empShifts[i].classList.add('isAssigned');
+    //                 }
+    //             }
+    //         }
+    //     }
+    // },
     setVacation: function (arr) {
-        let shiftCell = document.getElementsByClassName('shift-cancel');
+        let shiftCell = document.getElementsByClassName('shift');
 
         for (let shift of shiftCell) {
-            shift.onclick = function () {
-                let cell = this.id;
+            let cell = this.id;
 
-                if (this.classList.contains('isCancelled')) {
-                    this.classList.remove('isCancelled');
-
-                    for (let empShift of arr) {
-                        console.log(empShift);
-                        if (+empShift.id === +cell) {
-                            empShift.status = null;
-                            console.log(empShift);
-                        }
-                    }
-                } else {
-                    this.classList.add('isCancelled');
-
-                    for (let empShift of arr) {
-                        console.log(empShift);
-                        if (+empShift.id === +cell) {
-                            empShift.status = 'isCancelled';
-                            console.log(empShift);
-                        }
-                    }
+            for (let empShift of arr) {
+                if (+empShift.id === +cell) {
+                    this.classList.add(empShift.status);
                 }
             }
         }

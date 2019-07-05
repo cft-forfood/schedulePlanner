@@ -112,7 +112,8 @@ th {
 .isAssigned {
 	background-color: rgb(38, 198, 218);
 }
-.shift-cancel {
+.shift-cancel,
+.shift-assigned {
 	height: 40px;
 	padding: 0;
 }

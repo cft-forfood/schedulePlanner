@@ -33,90 +33,95 @@ let model = {
     ],
     getShifts: [
         {
-            id: 11,
-            date: 1561914000000,
+            id: 111,
+            date: 1562518800000,
             workerId: 1,
             status: null
         },
         {
-            id: 12,
-            date: 1561914000000,
+            id: 112,
+            date: 1562518800000,
             workerId: 2,
             status: null
         },
         {
-            id: 13,
-            date: 1562000400000,
+            id: 113,
+            date: 1562605200000,
             workerId: 1,
             status: "isCancelled"
         },
         {
-            id: 14,
-            date: 1562000400000,
+            id: 114,
+            date: 1562605200000,
             workerId: 2,
             status: null
         },
         {
-            id: 15,
-            date: 1562086800000,
+            id: 115,
+            date: 1562691600000,
             workerId: 1,
             status: null
         },
         {
-            id: 16,
-            date: 1562086800000,
+            id: 116,
+            date: 1562691600000,
             workerId: 2,
             status: null
         },
         {
-            id: 17,
-            date: 1562173200000,
+            id: 117,
+            date: 1562778000000,
             workerId: 1,
             status: null
         },
         {
-            id: 18,
-            date: 1562173200000,
+            id: 118,
+            date: 1562778000000,
             workerId: 2,
             status: null
         },
         {
-            id: 19,
-            date: 1562259600000,
+            id: 119,
+            date: 1562864400000,
             workerId: 1,
             status: "isCancelled"
         },
         {
-            id: 20,
-            date: 1562259600000,
+            id: 120,
+            date: 1562864400000,
             workerId: 2,
             status: null
         },
         {
-            id: 21,
-            date: 1562346000000,
+            id: 121,
+            date: 1562950800000,
             workerId: 1,
             status: null
         },
         {
-            id: 22,
-            date: 1562346000000,
+            id: 122,
+            date: 1562950800000,
             workerId: 2,
             status: "isCancelled"
         },
         {
-            id: 23,
-            date: 1562432400000,
+            id: 123,
+            date: 1563037200000,
             workerId: 1,
             status: null
         },
         {
-            id: 24,
-            date: 1562432400000,
+            id: 124,
+            date: 1563037200000,
             workerId: 2,
             status: "isCancelled"
         }
     ],
+    filterEmployeeList: function (categoryText) {
+        return this.getWorkers.filter(function (cat) {
+            return cat.category === categoryText;
+        });
+    },
     getMonday: function (date) {
         date = new Date(date);
         date.setHours(0);
@@ -126,7 +131,7 @@ let model = {
         let day = date.getDay();
         let diff = date.getDate() - day + (day === 0 ? -6:1);
 
-        return new Date(date.setDate(diff));
+        return new Date(date.setDate(diff + 7));
     },
     formatDate: function (date) {
         let day = date.getDate();
@@ -217,6 +222,8 @@ let view = {
         dayUTC.id = 'shift-1';
         dayCell.appendChild(dayUTC);
 
+        console.log(date.getTime())
+
         for (let i = 0; i < 6; i++) {
             date.setDate(date.getDate() + 1);
 
@@ -233,6 +240,8 @@ let view = {
             dayUTC.textContent = date;
             dayUTC.id = 'shift-' + (i + 2);
             dayCell.appendChild(dayUTC);
+
+            console.log(date.getTime())
         }
 
         arr.forEach((employee) => {

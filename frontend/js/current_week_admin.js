@@ -36,7 +36,7 @@ let model = {
             id: 11,
             date: 1561914000000,
             workerId: 1,
-            status: null
+            status: "isAssigned"
         },
         {
             id: 12,
@@ -48,7 +48,7 @@ let model = {
             id: 13,
             date: 1562000400000,
             workerId: 1,
-            status: "isCancelled"
+            status: "isAssigned"
         },
         {
             id: 14,
@@ -60,13 +60,13 @@ let model = {
             id: 15,
             date: 1562086800000,
             workerId: 1,
-            status: null
+            status: "isAssigned"
         },
         {
             id: 16,
             date: 1562086800000,
             workerId: 2,
-            status: null
+            status: "isAssigned"
         },
         {
             id: 17,
@@ -78,13 +78,13 @@ let model = {
             id: 18,
             date: 1562173200000,
             workerId: 2,
-            status: null
+            status: "isAssigned"
         },
         {
             id: 19,
             date: 1562259600000,
             workerId: 1,
-            status: "isCancelled"
+            status: "isAssigned"
         },
         {
             id: 20,
@@ -102,7 +102,7 @@ let model = {
             id: 22,
             date: 1562346000000,
             workerId: 2,
-            status: "isCancelled"
+            status: "isAssigned"
         },
         {
             id: 23,
@@ -114,7 +114,7 @@ let model = {
             id: 24,
             date: 1562432400000,
             workerId: 2,
-            status: "isCancelled"
+            status: "isAssigned"
         }
     ],
     filterEmployeeList: function (categoryText) {
@@ -158,8 +158,6 @@ let view = {
         categoryDiv.textContent = category;
         rowDiv.appendChild(categoryDiv);
 
-        console.log(arr);
-
         for (let employee of arr) {
             let empRowDiv = document.createElement('div');
             empRowDiv.className = 'row';
@@ -193,10 +191,10 @@ let view = {
         empInfo.appendChild(empPhone);
     },
     showShifts: function (arr) {
-        let shiftDiv = document.getElementById('shiftDiv');
+        let shiftDiv = document.getElementById('shiftDivCurrent');
 
         let empTable = document.createElement('table');
-        empTable.id = 'shiftList';
+        empTable.id = 'shiftListCurrent';
         shiftDiv.appendChild(empTable);
 
         let headerRow = document.createElement('tr');
@@ -264,43 +262,16 @@ let view = {
                 empRow.appendChild(emptyCell);
             }
         });
-
-        let buttonDiv = document.createElement('div');
-        buttonDiv.classList = 'row center mt25';
-        shiftDiv.appendChild(buttonDiv);
-
-        let button = document.createElement('button');
-        button.className = 'btn-green';
-        button.textContent = 'Подтвердить';
-        buttonDiv.appendChild(button);
     },
     setShift: function (arr) {
         let shiftCell = document.getElementsByClassName('shift');
 
         for (let shift of shiftCell) {
-            shift.onclick = function () {
-                let cell = this.id;
+            let cell = this.id;
 
-                if (this.classList.contains('isAssigned')) {
-                    this.classList.remove('isAssigned');
-
-                    for (let empShift of arr) {
-                        console.log(empShift);
-                        if (+empShift.id === +cell) {
-                            empShift.status = null;
-                            console.log(empShift);
-                        }
-                    }
-                } else {
-                    this.classList.add('isAssigned');
-
-                    for (let empShift of arr) {
-                        console.log(empShift);
-                        if (+empShift.id === +cell) {
-                            empShift.status = 'isAssigned';
-                            console.log(empShift);
-                        }
-                    }
+            for (let empShift of arr) {
+                if (+empShift.id === +cell) {
+                    this.classList.add(empShift.status);
                 }
             }
         }
@@ -320,119 +291,14 @@ let view = {
                     if (arr[j].status === "isCancelled") {
                         empShifts[i].classList.add('isCancelled');
                     }
-                }
-            }
-        }
-    },
-    showVacation: function (emp) {
-        let shiftDiv = document.getElementById('vacationDiv');
 
-        let empTable = document.createElement('table');
-        empTable.id = 'vacationList';
-        shiftDiv.appendChild(empTable);
-
-        let headerRow = document.createElement('tr');
-        empTable.appendChild(headerRow);
-
-        let date = model.getMonday(new Date());
-
-        let dayCell = document.createElement('th');
-        dayCell.className = 'shift-date';
-        headerRow.appendChild(dayCell);
-
-        let dayFormatted = document.createElement('span');
-        dayFormatted.textContent = model.formatDate(date);
-        dayCell.appendChild(dayFormatted);
-
-        let dayUTC = document.createElement('span');
-        dayUTC.style.display = 'none';
-        dayUTC.textContent = date;
-        dayUTC.id = 'shift-1';
-        dayCell.appendChild(dayUTC);
-
-        for (let i = 0; i < 6; i++) {
-            date.setDate(date.getDate() + 1);
-
-            let dayCell = document.createElement('th');
-            dayCell.className = 'shift-date';
-            headerRow.appendChild(dayCell);
-
-            let dayFormatted = document.createElement('span');
-            dayFormatted.textContent = model.formatDate(date);
-            dayCell.appendChild(dayFormatted);
-
-            let dayUTC = document.createElement('span');
-            dayUTC.style.display = 'none';
-            dayUTC.textContent = date;
-            dayUTC.id = 'shift-' + (i + 2);
-            dayCell.appendChild(dayUTC);
-        }
-
-        let empRow = document.createElement('tr');
-        empRow.id = emp.id;
-        empTable.appendChild(empRow);
-
-        for (let i = 0; i < 7; i++) {
-            let emptyCell = document.createElement('td');
-            emptyCell.className = 'shift-cancel';
-            empRow.appendChild(emptyCell);
-        }
-
-        let buttonDiv = document.createElement('div');
-        buttonDiv.classList = 'row center mt25';
-        shiftDiv.appendChild(buttonDiv);
-
-        let button = document.createElement('button');
-        button.className = 'btn-green';
-        button.textContent = 'Подтвердить';
-        buttonDiv.appendChild(button);
-    },
-    setVacationId: function (arr, emp) {
-        for (let j = 0; j < arr.length; j++) {
-            let empTr = document.getElementById(emp);
-            let empShifts = empTr.getElementsByClassName('shift-cancel');
-
-            for (let i = 0; i < empShifts.length; i++) {
-                let dayId = document.getElementById('shift-' + (i + 1));
-                let dayShiftWeek = Date.parse(dayId.textContent);
-
-                if (dayShiftWeek === arr[j].date) {
-                    empShifts[i].id = arr[j].id;
-                }
-            }
-        }
-    },
-    setVacation: function (arr) {
-    let shiftCell = document.getElementsByClassName('shift-cancel');
-
-    for (let shift of shiftCell) {
-        shift.onclick = function () {
-            let cell = this.id;
-
-            if (this.classList.contains('isCancelled')) {
-                this.classList.remove('isCancelled');
-
-                for (let empShift of arr) {
-                    console.log(empShift);
-                    if (+empShift.id === +cell) {
-                        empShift.status = null;
-                        console.log(empShift);
-                    }
-                }
-            } else {
-                this.classList.add('isCancelled');
-
-                for (let empShift of arr) {
-                    console.log(empShift);
-                    if (+empShift.id === +cell) {
-                        empShift.status = 'isCancelled';
-                        console.log(empShift);
+                    if (arr[j].status === "isAssigned") {
+                        empShifts[i].classList.add('isAssigned');
                     }
                 }
             }
         }
-    }
-},
+    },
 };
 
 let controller = {
@@ -446,12 +312,6 @@ let controller = {
         menu.onmouseleave = function () {
             dropdown.classList.remove('menu-open');
         }
-    },
-    showEmployeeList: () => {
-        let cooksArr = model.filterEmployeeList('Повар');
-        let waitersArr = model.filterEmployeeList('Официант');
-        view.showEmployeeList(cooksArr, 'cooks', 'Повара');
-        view.showEmployeeList(waitersArr, 'waiters', 'Официанты');
     },
     showEmployeeMenu: () => {
         view.showEmployeeMenu(model.getWorkers);
@@ -467,27 +327,12 @@ let controller = {
             view.setShiftId(model.getShifts);
         }
     },
-    showVacation: () => {
-        view.showVacation(model.getWorkers[0]);
-    },
-    setVacationId: () => {
-        for (let shiftDay of model.getShifts) {
-            view.setVacationId(model.getShifts, model.getWorkers[0].id);
-        }
-    },
-    setVacation: () => {
-        view.setVacation(model.getShifts);
-    },
 };
 
 window.onload = () => {
     controller.openMenu();
-    controller.showEmployeeList();
     controller.showEmployeeMenu();
     controller.showShifts();
     controller.setShift();
     controller.setShiftId();
-    controller.showVacation();
-    controller.setVacationId();
-    controller.setVacation();
 };
