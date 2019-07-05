@@ -252,15 +252,15 @@ button {
 }
 .feature-effect {
 	padding-top: 65px;
-	background-image: url("../media/calendar.svg");
+	background-image: url("../media/calendar.png");
 }
 .feature-automation {
 	padding-top: 65px;
-	background-image: url("../media/automation.svg");
+	background-image: url("../media/automation.png");
 }
 .feature-org {
 	padding-top: 65px;
-	background-image: url("../media/job.svg");
+	background-image: url("../media/job.png");
 }
 p {
 	text-align: center;
