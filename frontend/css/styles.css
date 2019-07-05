@@ -251,15 +251,15 @@ button {
 	list-style: none;
 }
 .feature-effect {
-	padding-top: 65px;
+	padding-top: 75px;
 	background-image: url("../media/teamwork.png");
 }
 .feature-automation {
-	padding-top: 65px;
+	padding-top: 75px;
 	background-image: url("../media/automation.png");
 }
 .feature-org {
-	padding-top: 65px;
+	padding-top: 75px;
 	background-image: url("../media/job.png");
 }
 p {
