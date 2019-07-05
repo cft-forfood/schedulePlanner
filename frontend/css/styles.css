@@ -124,15 +124,15 @@ th {
 }
 .left-column {
 	display: inline-block;
-	width: 400px;
+	width: 420px;
 	margin-right: 20px;
 	text-align: right;
 	font-weight: 600;
 }
 .right-column {
 	display: inline-block;
-	float: right;
-	width: 720px;
+	float: center;
+	width: 250px;
 }
 .row {
 	margin-bottom: 15px;
