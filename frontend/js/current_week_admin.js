@@ -33,88 +33,88 @@ let model = {
     ],
     getShifts: [
         {
-            id: 111,
-            date: 1562518800000,
+            id: 11,
+            date: 1561914000000,
             workerId: 1,
-            status: null
+            status: "isAssigned"
         },
         {
-            id: 112,
-            date: 1562518800000,
+            id: 12,
+            date: 1561914000000,
             workerId: 2,
             status: null
         },
         {
-            id: 113,
-            date: 1562605200000,
+            id: 13,
+            date: 1562000400000,
             workerId: 1,
-            status: "isCancelled"
+            status: "isAssigned"
         },
         {
-            id: 114,
-            date: 1562605200000,
+            id: 14,
+            date: 1562000400000,
             workerId: 2,
             status: null
         },
         {
-            id: 115,
-            date: 1562691600000,
+            id: 15,
+            date: 1562086800000,
+            workerId: 1,
+            status: "isAssigned"
+        },
+        {
+            id: 16,
+            date: 1562086800000,
+            workerId: 2,
+            status: "isAssigned"
+        },
+        {
+            id: 17,
+            date: 1562173200000,
             workerId: 1,
             status: null
         },
         {
-            id: 116,
-            date: 1562691600000,
+            id: 18,
+            date: 1562173200000,
+            workerId: 2,
+            status: "isAssigned"
+        },
+        {
+            id: 19,
+            date: 1562259600000,
+            workerId: 1,
+            status: "isAssigned"
+        },
+        {
+            id: 20,
+            date: 1562259600000,
             workerId: 2,
             status: null
         },
         {
-            id: 117,
-            date: 1562778000000,
+            id: 21,
+            date: 1562346000000,
             workerId: 1,
             status: null
         },
         {
-            id: 118,
-            date: 1562778000000,
+            id: 22,
+            date: 1562346000000,
             workerId: 2,
-            status: null
+            status: "isAssigned"
         },
         {
-            id: 119,
-            date: 1562864400000,
-            workerId: 1,
-            status: "isCancelled"
-        },
-        {
-            id: 120,
-            date: 1562864400000,
-            workerId: 2,
-            status: null
-        },
-        {
-            id: 121,
-            date: 1562950800000,
+            id: 23,
+            date: 1562432400000,
             workerId: 1,
             status: null
         },
         {
-            id: 122,
-            date: 1562950800000,
+            id: 24,
+            date: 1562432400000,
             workerId: 2,
-            status: "isCancelled"
-        },
-        {
-            id: 123,
-            date: 1563037200000,
-            workerId: 1,
-            status: null
-        },
-        {
-            id: 124,
-            date: 1563037200000,
-            workerId: 2,
-            status: "isCancelled"
+            status: "isAssigned"
         }
     ],
     filterEmployeeList: function (categoryText) {
@@ -131,7 +131,7 @@ let model = {
         let day = date.getDay();
         let diff = date.getDate() - day + (day === 0 ? -6:1);
 
-        return new Date(date.setDate(diff + 7));
+        return new Date(date.setDate(diff));
     },
     formatDate: function (date) {
         let day = date.getDate();
@@ -157,8 +157,6 @@ let view = {
         categoryDiv.className = 'row categories';
         categoryDiv.textContent = category;
         rowDiv.appendChild(categoryDiv);
-
-        console.log(arr);
 
         for (let employee of arr) {
             let empRowDiv = document.createElement('div');
@@ -193,10 +191,10 @@ let view = {
         empInfo.appendChild(empPhone);
     },
     showShifts: function (arr) {
-        let shiftDiv = document.getElementById('shiftDiv');
+        let shiftDiv = document.getElementById('shiftDivCurrent');
 
         let empTable = document.createElement('table');
-        empTable.id = 'shiftList';
+        empTable.id = 'shiftListCurrent';
         shiftDiv.appendChild(empTable);
 
         let headerRow = document.createElement('tr');
@@ -222,8 +220,6 @@ let view = {
         dayUTC.id = 'shift-1';
         dayCell.appendChild(dayUTC);
 
-        console.log(date.getTime())
-
         for (let i = 0; i < 6; i++) {
             date.setDate(date.getDate() + 1);
 
@@ -240,8 +236,6 @@ let view = {
             dayUTC.textContent = date;
             dayUTC.id = 'shift-' + (i + 2);
             dayCell.appendChild(dayUTC);
-
-            console.log(date.getTime())
         }
 
         arr.forEach((employee) => {
@@ -268,43 +262,16 @@ let view = {
                 empRow.appendChild(emptyCell);
             }
         });
-
-        let buttonDiv = document.createElement('div');
-        buttonDiv.classList = 'row center mt25';
-        shiftDiv.appendChild(buttonDiv);
-
-        let button = document.createElement('button');
-        button.className = 'btn-green';
-        button.textContent = 'Подтвердить';
-        buttonDiv.appendChild(button);
     },
     setShift: function (arr) {
         let shiftCell = document.getElementsByClassName('shift');
 
         for (let shift of shiftCell) {
-            shift.onclick = function () {
-                let cell = this.id;
+            let cell = this.id;
 
-                if (this.classList.contains('isAssigned')) {
-                    this.classList.remove('isAssigned');
-
-                    for (let empShift of arr) {
-                        console.log(empShift);
-                        if (+empShift.id === +cell) {
-                            empShift.status = null;
-                            console.log(empShift);
-                        }
-                    }
-                } else {
-                    this.classList.add('isAssigned');
-
-                    for (let empShift of arr) {
-                        console.log(empShift);
-                        if (+empShift.id === +cell) {
-                            empShift.status = 'isAssigned';
-                            console.log(empShift);
-                        }
-                    }
+            for (let empShift of arr) {
+                if (+empShift.id === +cell) {
+                    this.classList.add(empShift.status);
                 }
             }
         }
@@ -323,6 +290,10 @@ let view = {
 
                     if (arr[j].status === "isCancelled") {
                         empShifts[i].classList.add('isCancelled');
+                    }
+
+                    if (arr[j].status === "isAssigned") {
+                        empShifts[i].classList.add('isAssigned');
                     }
                 }
             }
