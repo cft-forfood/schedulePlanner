@@ -190,16 +190,15 @@ button {
 	text-align: right;
 	margin-right: 20px;
 }
-h1 {
+.mainpage-h1 {
 	font-size: 25pt;
 	text-align: center;
 	padding-bottom: 12px;
 }
-h2, h3 {
+.mainpage-h2 {
 	text-align: center;
 	padding-bottom: 12px;
 	border-bottom: 1px solid #cccccc;
-	
 }
 .opacity {
 	background-color: rgba(255, 255, 255, 0.75);
