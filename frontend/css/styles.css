@@ -119,6 +119,12 @@ th {
 	height: 40px;
 	padding: 0;
 }
+.isCancelled {
+	background-color: rgb(255, 112, 67);
+}
+.isCancelled.shift-selected {
+	background-color: rgb(255, 202, 40);
+}
 .left-column {
 	display: inline-block;
 	width: 400px;
