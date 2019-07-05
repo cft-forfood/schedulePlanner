@@ -7,31 +7,31 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <ul class="main-menu">
-            <li class="logo"><a href="/"><img src="../media/cat.svg" alt="Главная страница"></a></li>
-            <li><a href="./current_week_employee.html">Текущая неделя</a></li>
-            <li><a href="./next_week_employee.html">Следующая неделя</a></li>
-        </ul>
-        <ul class="main-account" id="menu">
-            <li><span id="employeeNameMenu"></span>
-                <ul class="drop" id="drop">
-                    <li id="employeeMenuInfo" class="info"></li>
-                    <li><a href="./workers_list.html">Список сотрудников</a></li>
-                    <li><a href="">Выход</a></li>
-                </ul>
-            </li>
-        </ul>
+<div class="header">
+    <ul class="main-menu">
+        <li class="logo"><a href="/"><img src="../media/cat.svg" alt="Главная страница"></a></li>
+        <li><a href="./current_week_employee.html">Текущая неделя</a></li>
+        <li><a href="./next_week_employee.html">Следующая неделя</a></li>
+    </ul>
+    <ul class="main-account" id="menu">
+        <li><span id="employeeNameMenu"></span>
+            <ul class="drop" id="drop">
+                <li id="employeeMenuInfo" class="info"></li>
+                <li><a href="./workers_list.html">Список сотрудников</a></li>
+                <li><a href="">Выход</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="content">
+    <div class="content-title">
+        <h3>Следующая неделя</h3>
     </div>
-    <div class="content">
-        <div class="content-title">
-            <h3>Следующая неделя</h3>
-        </div>
-        <div id="employeeList"></div>
-        <div class="content-body">
-            <form id="vacationDiv" action="" method="post"></form>
-        </div>
+    <div id="employeeList"></div>
+    <div class="content-body">
+        <form id="vacationDiv" action="" method="post"></form>
     </div>
-    <script src="../js/next_week_employee.js" type="text/javascript"></script>
+</div>
+<script src="../js/next_week_employee.js" type="text/javascript"></script>
 </body>
 </html>

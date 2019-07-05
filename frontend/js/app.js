@@ -403,36 +403,36 @@ let view = {
         }
     },
     setVacation: function (arr) {
-    let shiftCell = document.getElementsByClassName('shift-cancel');
+        let shiftCell = document.getElementsByClassName('shift-cancel');
 
-    for (let shift of shiftCell) {
-        shift.onclick = function () {
-            let cell = this.id;
+        for (let shift of shiftCell) {
+            shift.onclick = function () {
+                let cell = this.id;
 
-            if (this.classList.contains('isCancelled')) {
-                this.classList.remove('isCancelled');
+                if (this.classList.contains('isCancelled')) {
+                    this.classList.remove('isCancelled');
 
-                for (let empShift of arr) {
-                    console.log(empShift);
-                    if (+empShift.id === +cell) {
-                        empShift.status = null;
+                    for (let empShift of arr) {
                         console.log(empShift);
+                        if (+empShift.id === +cell) {
+                            empShift.status = null;
+                            console.log(empShift);
+                        }
                     }
-                }
-            } else {
-                this.classList.add('isCancelled');
+                } else {
+                    this.classList.add('isCancelled');
 
-                for (let empShift of arr) {
-                    console.log(empShift);
-                    if (+empShift.id === +cell) {
-                        empShift.status = 'isCancelled';
+                    for (let empShift of arr) {
                         console.log(empShift);
+                        if (+empShift.id === +cell) {
+                            empShift.status = 'isCancelled';
+                            console.log(empShift);
+                        }
                     }
                 }
             }
         }
-    }
-},
+    },
 };
 
 let controller = {
