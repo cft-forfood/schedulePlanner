@@ -188,14 +188,24 @@ h1 {
 	padding-bottom: 12px;
 }
 h2, h3 {
-	text-align: center !important;
+	text-align: center;
 	padding-bottom: 12px;
 	border-bottom: 1px solid #cccccc;
+	
 }
 .background-page {
+	height: 100vh;
+	min-width: 320px;
+	max-width: 1920px;
+	color: rgb(38, 50, 56);
+	font-family: Montserrat, sans-serif;
 	background: #ffffff url("../media/background.png") no-repeat 50% 0;
 	background-attachment: fixed;
-	background-size: 89%;
+	background-size: 100%;
+	margin: 20px auto;
+	max-width: 1200px;
+	border-radius: 5px;
+	padding: 20px;
 }
 .top-page {
 	width: 480px;
@@ -208,7 +218,7 @@ h2, h3 {
 	display: inline-block;
 	vertical-align: top;
 	width: 30%;
-	margin: 0 5px;
+	margin: 15px 5px;
 	text-align: center;
 	background-repeat: no-repeat;
 	background-position: center top;
@@ -228,4 +238,7 @@ h2, h3 {
 .feature-org {
 	padding-top: 65px;
 	background-image: url("../media/job.svg");
+}
+p {
+	text-align: center;
 }
