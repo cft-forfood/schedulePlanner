@@ -102,7 +102,7 @@ let model = {
             id: 22,
             date: 1562346000000,
             workerId: 2,
-            status: null
+            status: "isCancelled"
         },
         {
             id: 23,
@@ -114,7 +114,7 @@ let model = {
             id: 24,
             date: 1562432400000,
             workerId: 2,
-            status: null
+            status: "isCancelled"
         }
     ],
     filterEmployeeList: function (categoryText) {
@@ -314,6 +314,10 @@ let view = {
 
                 if (dayShiftWeek === arr[j].date) {
                     empShifts[i].id = arr[j].id;
+
+                    if (arr[j].status === "isCancelled") {
+                        empShifts[i].classList.add('isCancelled');
+                    }
                 }
             }
         }
