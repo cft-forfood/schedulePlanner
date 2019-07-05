@@ -210,23 +210,20 @@ h2, h3 {
 	min-width: 320px;
 	max-width: 1920px;
 	margin: 20px auto;
-	max-width: 1200px;
 	border-radius: 5px;
-	padding: 20px;
 }
 .background-page {
 	height: 100vh;
 	min-width: 320px;
-	max-width: 1920px;
+	max-width: 1200px;
 	color: rgb(38, 50, 56);
 	font-family: Montserrat, sans-serif;
 	background: #ffffff url("../media/background.png") no-repeat 50% 0;
 	background-attachment: fixed;
 	background-size: 100%;
 	margin: 20px auto;
-	max-width: 1200px;
 	border-radius: 5px;
-	padding: 20px;
+	
 }
 .top-page {
 	width: 480px;
@@ -262,6 +259,7 @@ h2, h3 {
 }
 p {
 	text-align: center;
+}
 .employee-name {
 	font-weight: 500;
 	margin-bottom: 5px;
