@@ -41,24 +41,22 @@ body {
 .header ul {
 	margin: 0;
 	list-style: none;
-	line-height: 39px;
+	line-height: 49px;
 }
 .main-menu, .main-account {
 	display: inline-block;
 }
-.main-menu li,
-.main-account li {
+.main-menu li, .main-account li {
 	display: inline;
 }
 .header li {
-	padding: 10px 15px;
-	margin-right: -3px;
+	padding: 15px;
+	margin-right: -4px;
 }
 .header li:hover {
 	background-color: rgb(207, 216, 220);
 }
-.header a,
-#menu {
+.header a, #menu {
 	color: rgb(38, 50, 56);
 	font-weight: 500;
 	text-decoration: none;
@@ -68,20 +66,20 @@ body {
 }
 .drop {
 	display: none;
-	width: 230px;
+	width: 250px;
 	background-color: rgb(41, 182, 246);
 	padding: 0 !important;
 	z-index: 999;
 	position: absolute;
 	right: 0;
-	top: 39px;
+	top: 49px;
 }
 .drop li {
 	display: block;
 	border-bottom: 1px solid rgb(236, 239, 241);
 	padding: 0 15px !important;
 }
-#menu > li {
+#menu>li {
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -93,10 +91,11 @@ body {
 }
 .category {
 	font-weight: 600;
-	margin-bottom: 5px;
+	margin-bottom: -10px;
 }
 .telephone {
 	font-weight: 300;
+	font-size: 14px;
 }
 table, td {
 	border: 1px solid #6c757d;
@@ -119,6 +118,12 @@ th {
 .shift-cancel {
 	height: 40px;
 	padding: 0;
+}
+.isCancelled {
+	background-color: rgb(255, 112, 67);
+}
+.isCancelled.shift-selected {
+	background-color: rgb(255, 202, 40);
 }
 .left-column {
 	display: inline-block;
@@ -162,27 +167,34 @@ button {
 .btn-blue:hover {
 	background: rgb(38, 198, 218);
 }
+.btn-green {
+	background: rgb(102, 187, 106);
+	color: white;
+}
+.btn-green:hover {
+	background: rgb(156, 204, 101);
+}
 .menu-open {
 	display: block;
 }
-
 .column-half {
 	width: 567px;
 	display: inline-block;
 }
-
 .categories {
-	margin: 15px;
 	font-weight: 600;
 	text-align: center;
 	margin: 30px 0;
 }
-
-.categories:first-child {
-	margin-top: 0;
-}
-
 .workers-list {
 	text-align: right;
 	margin-right: 20px;
+}
+.employee-name {
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+.employee-category {
+	font-weight: 300;
+	font-size: 14px;
 }

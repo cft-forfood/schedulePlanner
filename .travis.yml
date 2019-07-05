@@ -1,7 +1,13 @@
 sudo: false
 
 language: node_js
+
+os: windows
   
 branches:
   only:
     - master
+
+deploy:
+  provider: yandex-cloud
+  edge: true
