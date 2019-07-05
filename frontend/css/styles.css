@@ -250,18 +250,23 @@ button {
 	text-align: center;
 	padding: 0;
 	list-style: none;
+	font-weight: 600;
+}
+.functions {
+	padding-top: 15px;
+	padding-bottom: 25px;
 }
 .feature-effect {
 	padding-top: 75px;
-	background-image: url("../media/teamwork.png");
+	background-image: url("../media/calendar.png");
 }
 .feature-automation {
 	padding-top: 75px;
-	background-image: url("../media/automation.png");
+	background-image: url("../media/redact.png");
 }
 .feature-org {
 	padding-top: 75px;
-	background-image: url("../media/job.png");
+	background-image: url("../media/rasp.png");
 }
 p {
 	text-align: center;
