@@ -2,6 +2,7 @@ window.onload = function() {
     setShift();
     setVacation();
     openMenu();
+    getCurrentWeekDays();
 };
 
 function getEmployees() {
@@ -46,7 +47,7 @@ function showEmployees(employees) {
         headerCell.textContent = 'Сотрудник';
         headerRow.appendChild(headerCell);
 
-        let date = new Date();
+        let date = getMonday(new Date());
 
         for (let i = 0; i < 7; i++) {
             date.setDate(date.getDate() + 1);
@@ -61,6 +62,8 @@ function showEmployees(employees) {
             let dayCell = document.createElement('th');
             dayCell.textContent = day + '.' + month + '.' + year;
             headerRow.appendChild(dayCell);
+
+            console.log(day + '.' + month + '.' + year);
         }
     })();
 
@@ -107,3 +110,26 @@ function setVacation() {
         }
     }
 }
+
+function getMonday(d) {
+    d = new Date(d);
+    let day = d.getDay(),
+        diff = d.getDate() - day + (day === 0 ? -6:1);
+    return new Date(d.setDate(diff));
+}
+
+function getCurrentWeekDays() {
+    let d = getMonday(new Date());
+    console.log(d);
+
+    for (let i = 0; i < 6; i++) {
+        d.setDate(d.getDate() + 1);
+
+        console.log(d);
+    }
+}
+
+
+
+
+
