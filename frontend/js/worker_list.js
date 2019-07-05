@@ -1,6 +1,12 @@
 let model = {
     getWorkers: [
         {
+            id: 0,
+            workerName: "Петрова Ольга Анатольевна",
+            category: "Администратор",
+            phoneNumber: 74957387076
+        },
+        {
             id: 1,
             workerName: "Волков Аскольд Федотович",
             category: "Повар",
@@ -29,92 +35,6 @@ let model = {
             workerName: "Максимова Василиса Андреевна",
             category: "Официант",
             phoneNumber: 74951901053
-        }
-    ],
-    getShifts: [
-        {
-            id: 11,
-            date: 1561914000000,
-            workerId: 1,
-            status: null
-        },
-        {
-            id: 12,
-            date: 1561914000000,
-            workerId: 2,
-            status: null
-        },
-        {
-            id: 13,
-            date: 1562000400000,
-            workerId: 1,
-            status: "isCancelled"
-        },
-        {
-            id: 14,
-            date: 1562000400000,
-            workerId: 2,
-            status: null
-        },
-        {
-            id: 15,
-            date: 1562086800000,
-            workerId: 1,
-            status: null
-        },
-        {
-            id: 16,
-            date: 1562086800000,
-            workerId: 2,
-            status: null
-        },
-        {
-            id: 17,
-            date: 1562173200000,
-            workerId: 1,
-            status: null
-        },
-        {
-            id: 18,
-            date: 1562173200000,
-            workerId: 2,
-            status: null
-        },
-        {
-            id: 19,
-            date: 1562259600000,
-            workerId: 1,
-            status: "isCancelled"
-        },
-        {
-            id: 20,
-            date: 1562259600000,
-            workerId: 2,
-            status: null
-        },
-        {
-            id: 21,
-            date: 1562346000000,
-            workerId: 1,
-            status: null
-        },
-        {
-            id: 22,
-            date: 1562346000000,
-            workerId: 2,
-            status: "isCancelled"
-        },
-        {
-            id: 23,
-            date: 1562432400000,
-            workerId: 1,
-            status: null
-        },
-        {
-            id: 24,
-            date: 1562432400000,
-            workerId: 2,
-            status: "isCancelled"
         }
     ],
     filterEmployeeList: function (categoryText) {
@@ -214,9 +134,20 @@ let controller = {
     showEmployeeMenu: () => {
         view.showEmployeeMenu(model.getWorkers);
     },
+    data: []
 };
 
 window.onload = () => {
+
+    // $.ajax({
+    //     type: 'GET',
+    //     url: 'https://cors-anywhere.herokuapp.com/http://bosses.sharapov.uz:8800/workers',
+    //     success: function (data) {
+    //         model.getWorkers = data;
+    //         console.log(model.getWorkers)
+    //     }
+    // });
+
     controller.openMenu();
     controller.showEmployeeList();
     controller.showEmployeeMenu();

@@ -1,6 +1,12 @@
 let model = {
     getWorkers: [
         {
+            id: 0,
+            workerName: "Петрова Ольга Анатольевна",
+            category: "Администратор",
+            phoneNumber: 74957387076
+        },
+        {
             id: 1,
             workerName: "Волков Аскольд Федотович",
             category: "Повар",
@@ -115,7 +121,133 @@ let model = {
             date: 1563037200000,
             workerId: 2,
             status: "isCancelled"
-        }
+        },
+        {
+            id: 125,
+            date: 1562518800000,
+            workerId: 3,
+            status: null
+        },
+        {
+            id: 126,
+            date: 1562518800000,
+            workerId: 4,
+            status: null
+        },
+        {
+            id: 127,
+            date: 1562518800000,
+            workerId: 5,
+            status: null
+        },
+        {
+            id: 128,
+            date: 1562605200000,
+            workerId: 3,
+            status: null
+        },
+        {
+            id: 129,
+            date: 1562605200000,
+            workerId: 4,
+            status: "isCancelled"
+        },
+        {
+            id: 130,
+            date: 1562605200000,
+            workerId: 5,
+            status: null
+        },
+        {
+            id: 131,
+            date: 1562691600000,
+            workerId: 3,
+            status: "isCancelled"
+        },
+        {
+            id: 132,
+            date: 1562691600000,
+            workerId: 4,
+            status: null
+        },
+        {
+            id: 133,
+            date: 1562691600000,
+            workerId: 5,
+            status: null
+        },
+        {
+            id: 134,
+            date: 1562778000000,
+            workerId: 3,
+            status: null
+        },
+        {
+            id: 135,
+            date: 1562778000000,
+            workerId: 4,
+            status: null
+        },
+        {
+            id: 136,
+            date: 1562778000000,
+            workerId: 5,
+            status: null
+        },
+        {
+            id: 137,
+            date: 1562864400000,
+            workerId: 3,
+            status: null
+        },
+        {
+            id: 138,
+            date: 1562864400000,
+            workerId: 4,
+            status: null
+        },
+        {
+            id: 139,
+            date: 1562864400000,
+            workerId: 5,
+            status: null
+        },
+        {
+            id: 140,
+            date: 1562346000000,
+            workerId: 3,
+            status: "isCancelled"
+        },
+        {
+            id: 141,
+            date: 1562346000000,
+            workerId: 4,
+            status: null
+        },
+        {
+            id: 142,
+            date: 1562346000000,
+            workerId: 5,
+            status: null
+        },
+        {
+            id: 143,
+            date: 1563037200000,
+            workerId: 3,
+            status: null
+        },
+        {
+            id: 144,
+            date: 1563037200000,
+            workerId: 4,
+            status: null
+        },
+        {
+            id: 145,
+            date: 1563037200000,
+            workerId: 5,
+            status: null
+        },
     ],
     filterEmployeeList: function (categoryText) {
         return this.getWorkers.filter(function (cat) {

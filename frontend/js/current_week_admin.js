@@ -1,6 +1,12 @@
 let model = {
     getWorkers: [
         {
+            id: 0,
+            workerName: "Петрова Ольга Анатольевна",
+            category: "Администратор",
+            phoneNumber: 74957387076
+        },
+        {
             id: 1,
             workerName: "Волков Аскольд Федотович",
             category: "Повар",
@@ -96,7 +102,7 @@ let model = {
             id: 21,
             date: 1562346000000,
             workerId: 1,
-            status: null
+            status: "isAssigned"
         },
         {
             id: 22,
@@ -115,6 +121,132 @@ let model = {
             date: 1562432400000,
             workerId: 2,
             status: "isAssigned"
+        },
+        {
+            id: 25,
+            date: 1561914000000,
+            workerId: 3,
+            status: "isAssigned"
+        },
+        {
+            id: 26,
+            date: 1561914000000,
+            workerId: 4,
+            status: "isAssigned"
+        },
+        {
+            id: 27,
+            date: 1561914000000,
+            workerId: 5,
+            status: null
+        },
+        {
+            id: 28,
+            date: 1562000400000,
+            workerId: 3,
+            status: "isAssigned"
+        },
+        {
+            id: 29,
+            date: 1562000400000,
+            workerId: 4,
+            status: null
+        },
+        {
+            id: 30,
+            date: 1562000400000,
+            workerId: 5,
+            status: "isAssigned"
+        },
+        {
+            id: 31,
+            date: 1562086800000,
+            workerId: 3,
+            status: null
+        },
+        {
+            id: 32,
+            date: 1562086800000,
+            workerId: 4,
+            status: "isAssigned"
+        },
+        {
+            id: 33,
+            date: 1562086800000,
+            workerId: 5,
+            status: "isAssigned"
+        },
+        {
+            id: 34,
+            date: 1562173200000,
+            workerId: 3,
+            status: null
+        },
+        {
+            id: 35,
+            date: 1562173200000,
+            workerId: 4,
+            status: "isAssigned"
+        },
+        {
+            id: 36,
+            date: 1562173200000,
+            workerId: 5,
+            status: null
+        },
+        {
+            id: 37,
+            date: 1562259600000,
+            workerId: 3,
+            status: "isAssigned"
+        },
+        {
+            id: 38,
+            date: 1562259600000,
+            workerId: 4,
+            status: "isAssigned"
+        },
+        {
+            id: 39,
+            date: 1562259600000,
+            workerId: 5,
+            status: "isAssigned"
+        },
+        {
+            id: 40,
+            date: 1562346000000,
+            workerId: 3,
+            status: "isAssigned"
+        },
+        {
+            id: 41,
+            date: 1562346000000,
+            workerId: 4,
+            status: null
+        },
+        {
+            id: 42,
+            date: 1562346000000,
+            workerId: 5,
+            status: "isAssigned"
+        },
+        {
+            id: 43,
+            date: 1562432400000,
+            workerId: 3,
+            status: "isAssigned"
+        },
+        {
+            id: 44,
+            date: 1562432400000,
+            workerId: 4,
+            status: "isAssigned"
+        },
+        {
+            id: 45,
+            date: 1562432400000,
+            workerId: 5,
+            status: null
         }
     ],
     filterEmployeeList: function (categoryText) {

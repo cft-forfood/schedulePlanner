@@ -5,30 +5,6 @@ let model = {
             workerName: "Волков Аскольд Федотович",
             category: "Повар",
             phoneNumber: 74954359015
-        },
-        {
-            id: 2,
-            workerName: "Медведев Лев Артемович",
-            category: "Повар",
-            phoneNumber: 74952146836
-        },
-        {
-            id: 3,
-            workerName: "Александрова Джульетта Леонидовна",
-            category: "Официант",
-            phoneNumber: 74950989007
-        },
-        {
-            id: 4,
-            workerName: "Романов Осип Петрович",
-            category: "Официант",
-            phoneNumber: 74954870783
-        },
-        {
-            id: 5,
-            workerName: "Максимова Василиса Андреевна",
-            category: "Официант",
-            phoneNumber: 74951901053
         }
     ],
     getShifts: [
@@ -39,33 +15,15 @@ let model = {
             status: null
         },
         {
-            id: 112,
-            date: 1562518800000,
-            workerId: 2,
-            status: null
-        },
-        {
             id: 113,
             date: 1562605200000,
             workerId: 1,
             status: "isCancelled"
         },
         {
-            id: 114,
-            date: 1562605200000,
-            workerId: 2,
-            status: null
-        },
-        {
             id: 115,
             date: 1562691600000,
             workerId: 1,
-            status: null
-        },
-        {
-            id: 116,
-            date: 1562691600000,
-            workerId: 2,
             status: null
         },
         {
@@ -75,22 +33,10 @@ let model = {
             status: null
         },
         {
-            id: 118,
-            date: 1562778000000,
-            workerId: 2,
-            status: null
-        },
-        {
             id: 119,
             date: 1562864400000,
             workerId: 1,
             status: "isCancelled"
-        },
-        {
-            id: 120,
-            date: 1562864400000,
-            workerId: 2,
-            status: null
         },
         {
             id: 121,
@@ -99,23 +45,11 @@ let model = {
             status: null
         },
         {
-            id: 122,
-            date: 1562950800000,
-            workerId: 2,
-            status: "isCancelled"
-        },
-        {
             id: 123,
             date: 1563037200000,
             workerId: 1,
             status: null
         },
-        {
-            id: 124,
-            date: 1563037200000,
-            workerId: 2,
-            status: "isCancelled"
-        }
     ],
     getMonday: function (date) {
         date = new Date(date);

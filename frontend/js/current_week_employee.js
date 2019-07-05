@@ -5,75 +5,51 @@ let model = {
             workerName: "Волков Аскольд Федотович",
             category: "Повар",
             phoneNumber: 74954359015
-        },
-        {
-            id: 2,
-            workerName: "Медведев Лев Артемович",
-            category: "Повар",
-            phoneNumber: 74952146836
-        },
-        {
-            id: 3,
-            workerName: "Александрова Джульетта Леонидовна",
-            category: "Официант",
-            phoneNumber: 74950989007
-        },
-        {
-            id: 4,
-            workerName: "Романов Осип Петрович",
-            category: "Официант",
-            phoneNumber: 74954870783
-        },
-        {
-            id: 5,
-            workerName: "Максимова Василиса Андреевна",
-            category: "Официант",
-            phoneNumber: 74951901053
         }
     ],
     getShifts: [
         {
-            id: 11,
+            id: 211,
             date: 1561914000000,
             workerId: 1,
             status: "isAssigned"
         },
         {
-            id: 13,
+            id: 213,
             date: 1562000400000,
             workerId: 1,
             status: "isAssigned"
         },
         {
-            id: 15,
+            id: 215,
             date: 1562086800000,
             workerId: 1,
             status: "isAssigned"
         },
         {
-            id: 17,
+            id: 217,
             date: 1562173200000,
             workerId: 1,
             status: null
         },
         {
-            id: 19,
+            id: 219,
             date: 1562259600000,
             workerId: 1,
             status: "isAssigned"
         },
         {
-            id: 21,
+            id: 221,
             date: 1562346000000,
             workerId: 1,
-            status: null
+            status: "isAssigned"
         },
         {
-            id: 23,
+            id: 223,
             date: 1562432400000,
             workerId: 1,
             status: null
-        },
+        }
     ],
     getMonday: function (date) {
         date = new Date(date);
@@ -190,30 +166,6 @@ let view = {
             }
         }
     },
-
-    // setShiftId: function (arr) {
-    //     for (let j = 0; j < arr.length; j++) {
-    //         let empTr = document.getElementById(arr[j].workerId);
-    //         let empShifts = empTr.getElementsByClassName('shift');
-    //
-    //         for (let i = 0; i < empShifts.length; i++) {
-    //             let dayId = document.getElementById('shift-' + (i + 1));
-    //             let dayShiftWeek = Date.parse(dayId.textContent);
-    //
-    //             if (dayShiftWeek === arr[j].date) {
-    //                 empShifts[i].id = arr[j].id;
-    //
-    //                 if (arr[j].status === "isCancelled") {
-    //                     empShifts[i].classList.add('isCancelled');
-    //                 }
-    //
-    //                 if (arr[j].status === "isAssigned") {
-    //                     empShifts[i].classList.add('isAssigned');
-    //                 }
-    //             }
-    //         }
-    //     }
-    // },
     setVacation: function (arr) {
         let shiftCell = document.getElementsByClassName('shift');
 

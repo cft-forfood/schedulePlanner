@@ -196,3 +196,9 @@ button {
 	font-weight: 300;
 	font-size: 14px;
 }
+#shiftListCurrent tr:nth-child(2) {
+	display: none;
+}
+#shiftList tr:nth-child(2) {
+	display: none;
+}
