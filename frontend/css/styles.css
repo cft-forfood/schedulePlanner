@@ -268,7 +268,7 @@ button {
 	padding-top: 75px;
 	background-image: url("../media/rasp.png");
 }
-p {
+.background-page p {
 	text-align: center;
 }
 .employee-name {
